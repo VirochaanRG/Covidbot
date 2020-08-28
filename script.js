@@ -69,7 +69,7 @@ function chatbotResponse() {
     country = false
   }
   if (country === true ) {
-    botMessage = `Unfortunately I don't know about the specific guidelines for that country but for general guidelines and information you can get it from: cdc.gov. `
+    botMessage = `Unfortunately I don't know about the specific guidelines for that country but for general guidelines and information you can get it from: cdc.gov.  `
     moreInfo = 3
     country = false
   }

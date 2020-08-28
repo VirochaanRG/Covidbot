@@ -84,3 +84,8 @@ body {
     display: table;
     clear: both;
   }
+
+  #info{
+    text-align: center;
+    font: 24px times, serif;
+  }
