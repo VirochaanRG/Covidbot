@@ -37,10 +37,11 @@ function chatbotResponse() {
 
   if (lastUserMessage.toLowerCase().includes("what is")){
     botMessage = "Covid-19 is a part of a family of diseases known as coronaviruses which are respiratory disease which affect parts of your respiratory system. These dcoronaviruses can range from the common cold all the way to some severe diseases like SARS."
+    moreInfo = 2
   }
 
   if(lastUserMessage.toLowerCase().includes("symptoms")){
-    botMessage = "Some common symptoms of Coronavirus include being "
+    botMessage = "Some common symptoms of Coronavirus include dry cough, fever, tiredness and stuff that is usually assocaited with the common cold or flu. Some more serious symptoms include shortness of breath and pain and pressure in the chest area. If you have any of the serious symptoms seek medical help."
   }
 
   if (lastUserMessage.toLowerCase().includes("have covid") || lastUserMessage.toLowerCase().includes("have coronavirus") || lastUserMessage.toLowerCase().includes("have the coronavirus")) {
