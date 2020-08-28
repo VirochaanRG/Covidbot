@@ -20,6 +20,12 @@ function chatbotResponse() {
 
   botMessage = "Please ask a Different Question"; //the default message
 
+  if (country === true ) {
+    botMessage = `Unfortunately I don't know about the specific guidelines for that country but for general guidelines and information you can get it from: cdc.gov.  `
+    moreInfo = 3
+    country = false
+  }
+
   if (lastUserMessage.toLowerCase() === 'hi' || lastUserMessage.toLowerCase() === 'hello') {
     botMessage = 'Hello. My name is COVIDbot and it is my job to keep you informed on everything related with the coronavirus.';
     moreInfo = 2
@@ -42,6 +48,7 @@ function chatbotResponse() {
 
   if(lastUserMessage.toLowerCase().includes("symptoms")){
     botMessage = "Some common symptoms of Coronavirus include dry cough, fever, tiredness and stuff that is usually assocaited with the common cold or flu. Some more serious symptoms include shortness of breath and pain and pressure in the chest area. If you have any of the serious symptoms seek medical help."
+    moreinfo = 2
   }
 
   if (lastUserMessage.toLowerCase().includes("have covid") || lastUserMessage.toLowerCase().includes("have coronavirus") || lastUserMessage.toLowerCase().includes("have the coronavirus")) {
