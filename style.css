@@ -37,6 +37,7 @@ body {
   
   .chatlog {
      font: 18px arial, sans-serif;
+     background-color: #7ab4eb;
   }
   
   #chatbox {
