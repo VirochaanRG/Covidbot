@@ -20,13 +20,7 @@ function chatbotResponse() {
 
   botMessage = "Please ask a Different Question"; //the default message
 
-  if (country === true ) {
-    botMessage = `Unfortunately I don't know about the specific guidelines for that country but for general guidelines and information you can get it from: cdc.gov.  `
-    moreInfo = 3
-    country = false
-  }
-
-  if (lastUserMessage.toLowerCase() === 'hi' || lastUserMessage.toLowerCase() === 'hello') {
+  if (lastUserMessage.toLowerCase() == 'hi' || lastUserMessage.toLowerCase() == 'hello') {
     botMessage = 'Hello. My name is COVIDbot and it is my job to keep you informed on everything related with the coronavirus.';
     moreInfo = 2
   }
@@ -58,37 +52,46 @@ function chatbotResponse() {
     return botMessage;
   }
 
-  if(moreInfo >= 3) {
+  if(moreInfo >= 3 && country == false) {
     botMessage = "I'm sorry, I can't really understand you. Please ask questions related towards COVID-19. For example you can ask " + moreInfoResponses[Math.round(Math.random()* 2)] ;
     moreInfo += 1
   }
 
 
 
-  if(lastUserMessage.toLowerCase === "canada" && country === true) {
+  if(lastUserMessage.toLowerCase() == "canada" && country == true) {
     botMessage = `Canadians can get more info at: https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html`
     moreInfo = 3
     country = false
+    return botMessage;
   }
-  if ((lastUserMessage.toLowerCase() === "usa" || lastUserMessage.toLowerCase() === "us" || lastUserMessage.toLowerCase() === "united states of america" || lastUserMessage.toLowerCase() === "america") && country === true ) {
+  if (((lastUserMessage.toLowerCase() == "usa" || lastUserMessage.toLowerCase() == "us" || lastUserMessage.toLowerCase() == "united states of america" || lastUserMessage.toLowerCase() == "america")) && country == true ) {
     botMessage = `Americans can get more info at: cdc.gov `
     moreInfo = 3
     country = false
+    return botMessage;
   }
-  if (country === true ) {
+  if (country == true ) {
     botMessage = `Unfortunately I don't know about the specific guidelines for that country but for general guidelines and information you can get it from: cdc.gov.  `
     moreInfo = 3
     country = false
+    return botMessage;
   }
 
-  if (botMessage === "Please ask a Different Question"){
+  if (botMessage == "Please ask a Different Question"){
     moreInfo += 1
   }
 
-  if (moreInfo > 5) {
+  if (moreInfo > 5 && country == false) {
     botMessage = "I still can't understand you. I would like to direct you to your countries COVID information for more help. What country are you from?";
     country = true
     return botMessage;
+  }
+
+  if (lastUserMessage.toLowerCase().includes("more information") || lastUserMessage.toLowerCase().includes("information") || lastUserMessage.toLowerCase().includes("info")) {
+    botMessage = "I would like to direct you to your countries COVID information for more help. What country are you from?";
+    moreInfo = 2
+    country = true
   }
 }
 
