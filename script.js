@@ -58,7 +58,7 @@ function chatbotResponse() {
     return botMessage;
   }
 
-  if(moreInfo >= 3) {
+  if(moreInfo >= 3 && country == false) {
     botMessage = "I'm sorry, I can't really understand you. Please ask questions related towards COVID-19. For example you can ask " + moreInfoResponses[Math.round(Math.random()* 2)] ;
     moreInfo += 1
   }
@@ -85,7 +85,7 @@ function chatbotResponse() {
     moreInfo += 1
   }
 
-  if (moreInfo > 5) {
+  if (moreInfo > 5 && country == false) {
     botMessage = "I still can't understand you. I would like to direct you to your countries COVID information for more help. What country are you from?";
     country = true
     return botMessage;
