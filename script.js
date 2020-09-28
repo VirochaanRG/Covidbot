@@ -48,7 +48,6 @@ function chatbotResponse() {
   if (lastUserMessage.toLowerCase().includes("have covid") || lastUserMessage.toLowerCase().includes("have coronavirus") || lastUserMessage.toLowerCase().includes("have the coronavirus")) {
     botMessage = "If you think you have the Coronavirus the first thing you should do is maintain social distancing from everyone in order for you to prevent the spread of the disease. You should always stay at home unless you need to go for medical care. If possible you shgould attempt to avoid public transit in order to limit interactions with others. For more information please enter your country and I will direct you to your respective website."
     moreInfo = 2
-    country = true
     return botMessage;
   }
 
