@@ -91,7 +91,7 @@ function chatbotResponse() {
     return botMessage;
   }
   
-  if (lastUserMessage.toLowerCase().includes("More Information")) {
+  if (lastUserMessage.toLowerCase().includes("more information") || lastUserMessage.toLowerCase().includes("information") || lastUserMessage.toLowerCase().includes("info")) {
     botMessage = "I would like to direct you to your countries COVID information for more help. What country are you from?";
     country = true
     return botMessage;
