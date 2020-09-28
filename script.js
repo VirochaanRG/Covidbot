@@ -5,7 +5,7 @@ var messages = [], //array that hold the record of each string in chat
   
 
 var moreInfo = 0;
-var moreInfoResponses = ["about deaths and cases in your country.", "about preventive measures.", "about ways the virus spreads."]; 
+var moreInfoResponses = ["about what to do if you have Covid", "about preventive measures.", "about ways the virus spreads."]; 
 var country = false
 //****************************************************************
 //****************************************************************
@@ -87,6 +87,12 @@ function chatbotResponse() {
 
   if (moreInfo > 5) {
     botMessage = "I still can't understand you. I would like to direct you to your countries COVID information for more help. What country are you from?";
+    country = true
+    return botMessage;
+  }
+  
+  if (lastUserMessage.toLowerCase().includes("More Information")) {
+    botMessage = "I would like to direct you to your countries COVID information for more help. What country are you from?";
     country = true
     return botMessage;
   }
